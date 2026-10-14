@@ -1,0 +1,819 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+}
+/* Базовые настройки хедера */
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    box-sizing: border-box;
+    position: fixed;
+}
+
+/* Контейнер: распределяет логотип влево, а ВСЁ меню — вправо */
+.header-container {
+    max-width: 1280px; /* Выравниваем по ширине с обновленным каталогом карточек */
+    width: 100%;
+    margin: 0 auto;
+    padding: 25px 20px; /* Аккуратные отступы сверху */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Стили для логотипа */
+.header-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.custom-logo {
+    height: 38px; /* Изящный размер логотипа как на макете */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Навигация, сдвинутая вправо */
+.header-nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu-exact {
+    display: flex;
+    list-style: none;
+    gap: 45px; 
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link-exact {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 300; 
+    color: #a0a0a5; 
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-link-exact:hover {
+    color: #ffffff; 
+}
+
+
+.gold-link {
+    color: #c5a46e;
+    font-weight: 400;
+}
+
+.gold-link:hover {
+    color: #e5c48e;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 15px 20px;
+    }
+    .nav-menu-exact {
+        gap: 20px; /* Ужимаем расстояние на небольших экранах */
+    }
+    .nav-link-exact {
+        font-size: 12px;
+    }
+}
+
+
+/* САМАЯ ПЕРВАЯ КАРТИНКА (ГЛАВНЫЙ ЭКРАН) */
+.hero-fullscreen {
+    width: 100%;
+    min-height: 100vh; /* Занимает ровно 100% высоты экрана */
+    /* Укажите точное имя файла вашей первой картинки (коллаж с пачками) */
+    background-image: url('./back.jpg'); 
+    background-repeat: no-repeat;
+    background-position: center center; /* Идеальное центрирование */
+    background-size: cover; /* Картинка заполняет экран без черных полей по бокам */
+    display: flex;
+    align-items: flex-end; /* Опускаем контент и кнопку к нижней части экрана */
+    position: relative;
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Центрируем кнопку по горизонтали */
+    padding-bottom: 80px; /* Отступ кнопки от самого низа экрана */
+}
+
+/* КРУГЛАЯ БОЛЬШАЯ КНОПКА НА ПЕРВОМ ЭКРАНЕ */
+.btn-hero-primary {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 18px 45px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 30px; /* Полностью круглая аккуратная рамка */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-primary:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .header-nav {
+        display: none; /* Прячем меню на телефонах */
+    }
+    .header-container {
+        padding: 20px;
+    }
+    .btn-hero-primary {
+        padding: 15px 30px;
+        font-size: 11px;
+    }
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.gold-text {
+    color: #d4af37;
+}
+
+/* ШАПКА И HERO ЭКРАН */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('./back.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d4af37;
+}
+
+.hero-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 60px;
+}
+
+/* КНОПКИ */
+.btn-primary {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 15px 40px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* КАТАЛОГ: Уменьшаем отступы вокруг всего блока */
+.catalog-section {
+    padding: 40px 0; /* Сократили отступы сверху и снизу в два раза */
+    background-color: #080808;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 1. ГЛАВНЫЙ КОНТЕЙНЕР: Расширяем его до 1280px, чтобы карточки заняли всю ширину экрана */
+.container {
+    width: 100%;
+    max-width: 1280px; 
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 2. СЕТКА КАТАЛОГА: Делаем карточки больше и раздвигаем их дальше друг от друга */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 35px; /* Зазор как на фото — карточки стоят свободно и не слипаются */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 3. КАРТОЧКА ТОВАРА */
+.product-card {
+    background-color: #111113;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #1c1c1f;
+    height: 100%; /* Заставляет все три карточки быть строго одной высоты */
+}
+
+/* 4. БЛОК С ТЕКСТОМ ВНУТРИ КАРТОЧКИ (ОПЕЧАТКА ИСПРАВЛЕНА) */
+.product-info {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around ;
+}
+.product-info h3 {
+    color: #ffffff !important;
+    font-size: 19px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.text-light .subtitle {
+    color: #a0a0a5 !important;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.specs {
+    list-style: none;
+    font-size: 13px;
+    color: #bbbbbb;
+    margin-bottom: 30px; 
+    padding: 0;
+}
+
+.specs li {
+    margin-bottom: 10px; 
+    line-height: 1.5;
+}
+.market-buttons-updated {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px; 
+    width: 100%;
+    margin-top: auto;
+}
+
+.product-img-box {
+    background-color: #161618;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-img-box img {
+    max-width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: contain;
+}
+
+
+
+.product-info h3 {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.product-info .subtitle {
+    font-size: 12px;
+    color: #888888;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.specs {
+    list-style: none;
+    font-size: 13px;
+    color: #bbbbbb;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.specs li {
+    margin-bottom: 8px;
+}
+
+.specs strong {
+    color: #ffffff;
+}
+
+.market-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.market-buttons a {
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 6px;
+    border: 1px solid #333336;
+    transition: background 0.3s;
+}
+
+.btn-ozon span { color: #005bff; }
+.btn-wb span { color: #cb11ab; }
+
+.market-buttons a:hover {
+    background-color: #1c1c1f;
+}
+
+/* СЕКЦИИ С ФОНАМИ И ПРЕИМУЩЕСТВАМИ */
+.banner-section {
+    position: relative;
+    padding: 100px 0;
+    background-color: #000000;
+}
+
+/* Главная секция: картинка с зёрнами и дымом встает на весь задний план */
+/* Исправленная секция: увеличиваем высоту и прижимаем зерна к низу */
+.premium-quality-section {
+    width: 100%;
+    
+    /* ИЗМЕНЕНО: Увеличиваем минимальную высоту блока, чтобы картинка раскрылась */
+    min-height: 520px; 
+    
+    background-image: url('./zerna.png');
+    background-repeat: no-repeat;
+    
+    /* ИЗМЕНЕНО: Жестко фиксируем зерна по нижней границе, а дым пойдет вверх */
+    background-position: center bottom;
+    
+    background-size: cover; 
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Лёгкое прозрачное наложение, чтобы белый текст был максимально чётким на фоне дыма */
+.quality-overlay-layer {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    /* Делаем едва заметное общее затемнение (всего 25%), чтобы проявить текстуру дыма */
+    background: rgba(0, 0, 0, 0.25); 
+}
+
+/* Контейнер для текста по центру экрана */
+.quality-text-box {
+    max-width: 850px; /* Ограничиваем ширину текста, чтобы он аккуратно смотрелся в блоке */
+    margin: 0 auto;
+    text-align: center; /* Строго по центру, как на макете */
+}
+
+.quality-text-box h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    /* Тонкая тень для букв, чтобы заголовок не терялся на белом дыме */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); 
+}
+
+.quality-text-box p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #ffffff; /* Чистый белый цвет текста, как в оригинале */
+    letter-spacing: 0.3px;
+    /* Тень для читаемости основного текста */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9); 
+}
+
+/* Адаптивность для мобильных телефонов */
+@media (max-width: 768px) {
+    .premium-quality-section,
+    .quality-overlay-layer {
+        min-height: auto;
+    }
+    .quality-overlay-layer {
+        padding: 50px 20px;
+        background: rgba(0, 0, 0, 0.5); /* Чуть сильнее затемняем на смартфонах */
+    }
+    .quality-text-box h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    .quality-text-box p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}
+
+
+/* АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ */
+@media (max-width: 992px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .reversed .banner-img-box { order: 2; }
+    .reversed .banner-text { order: 1; }
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none; /* Для полноценного меню нужен бургер-интерфейс */
+    }
+}
+/* Исправление читаемости текста внутри карточек */
+.text-light h3 {
+    color: #ffffff !important;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.text-light .subtitle {
+    color: #a0a0a5 !important;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.text-light .specs li {
+    color: #e0e0e5 !important; /* Светлый читаемый текст */
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.text-light .specs strong {
+    color: #ffffff !important;
+}
+
+/* Обновленный контейнер для маркетплейс-кнопок */
+.market-buttons-updated {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto; /* Прижимает кнопки к низу картотки */
+    width: 100%;
+}
+
+/* Общие стили для контурных кнопок */
+.btn-marketplace-ozon, 
+.btn-marketplace-wb {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff !important; /* Текст внутри кнопок всегда белый */
+    padding: 12px 0;
+    border-radius: 6px;
+    border: 1px solid #3d3d42; /* Тонкая серая рамка как в макете */
+    background: transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+    box-sizing: border-box;
+}
+
+/* Выделение брендовых названий цветом */
+.ozon-blue {
+    color: #005bff;
+    font-weight: 700;
+}
+
+.wb-pink {
+    color: #cb11ab;
+    font-weight: 700;
+}
+
+/* Эффект при наведении */
+.btn-marketplace-ozon:hover {
+    background-color: rgba(0, 91, 255, 0.1);
+    border-color: #005bff;
+}
+
+.btn-marketplace-wb:hover {
+    background-color: rgba(203, 17, 171, 0.1);
+    border-color: #cb11ab;
+}
+/* Главная секция с изображением чашки на весь экран */
+.premium-approach-section {
+    width: 100%;
+    min-height: 520px;
+    /* Укажите точное имя файла картинки с чашкой кофе (например, coffee-cup.jpg) */
+    background-image: url('./fon.png');
+    background-repeat: no-repeat;
+    
+    /* ФИКСАЦИЯ СПРАВА: Чашка гарантированно останется на своем месте в правой части */
+    background-position: right center;
+    
+    /* РАСТЯГИВАЕМ ФОН: Картинка заполняет 100% ширины блока без черных полос */
+    background-size: cover; 
+    background-color: #0b0b0b; /* Темный фон в тон картинки */
+    display: flex;
+    align-items: center;
+}
+
+/* Ограничиваем контейнер и оставляем текст в левой части */
+.premium-approach-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: flex-start; /* Текст прижимается строго к левому краю */
+    box-sizing: border-box;
+}
+
+/* Сам блок с текстом */
+.premium-approach-text {
+    max-width: 550px; /* Ограничиваем ширину текста, чтобы он не наезжал на чашку справа */
+    width: 100%;
+    text-align: left;
+}
+
+.premium-approach-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.premium-approach-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #e0e0e5; /* Светлый читаемый текст */
+    margin-bottom: 35px;
+}
+
+/* Красивая контурная кнопка */
+.btn-premium-outline {
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 14px 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 8px; /* Скругленные углы как на макете */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-premium-outline:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Адаптивность для мобильных экранов */
+@media (max-width: 992px) {
+    .premium-approach-section {
+        /* Накладываем небольшое затемнение на картинку на смартфонах для читаемости */
+        background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/coffee-cup.jpg');
+        background-position: center center;
+    }
+    .premium-approach-container {
+        justify-content: center; /* Центрируем контент */
+    }
+    .premium-approach-text {
+        max-width: 100%;
+        text-align: center; /* Текст по центру */
+    }
+    .premium-approach-text h2 {
+        font-size: 26px;
+    }
+}
+
+.premium-price-section {
+    width: 100%;
+    min-height: 520px;
+    /* Укажите точное имя файла вашей картинки */
+    background-image: url('./cofe.png');
+    background-repeat: no-repeat;
+    
+    /* ВАЖНО: Растягиваем картинку по ширине на 100% от экрана */
+    background-size: 100% auto; 
+    
+    /* Если экран слишком высокий, картинка закроет его без искажений */
+    background-position: left center;
+    background-color: #0d0d0d; /* Цвет подложки в тон камня */
+    display: flex;
+    align-items: center;
+}
+
+/* Ограничиваем контейнер и сдвигаем текст в правую часть */
+.premium-price-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: flex-end; /* Сдвиг содержимого вправо */
+    box-sizing: border-box;
+}
+
+/* Сам блок с текстом */
+.premium-price-text {
+    max-width: 500px; /* Текст не будет налезать на холдер слева */
+    width: 100%;
+    text-align: left;
+}
+
+.premium-price-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 22px;
+    letter-spacing: 1px;
+}
+
+.premium-price-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #e0e0e5; /* Светлый читаемый текст */
+}
+
+/* Экраны поменьше и ноутбуки */
+@media (max-width: 1200px) {
+    .premium-price-section {
+        background-size: cover; /* На ноутбуках переключаем на умное заполнение */
+    }
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    .premium-price-section {
+        background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/coffee-beans-top.jpg');
+        background-size: cover;
+    }
+    .premium-price-container {
+        justify-content: center;
+    }
+    .premium-price-text {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+/* СТИЛИ ДЛЯ БЛОКА С ВИДЕО */
+.video-section {
+    padding: 60px 0 80px 0; /* Просторные отступы */
+    background-color: #080808; /* В тон фона каталога */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Заголовок блока */
+.video-block-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.video-block-title h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.video-block-title p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #a0a0a5;
+}
+
+/* Контейнер, ограничивающий максимальную ширину плеера */
+.video-wrapper {
+    max-width: 900px; /* Видео не будет слишком огромным на больших мониторах */
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 16px; /* Красивые скругленные углы как у карточек */
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* Глубокая премиальная тень */
+    border: 1px solid #1c1c1f;
+    box-sizing: border-box;
+}
+
+/* Само видео адаптируется под размеры контейнера */
+.promo-video {
+    width: 100%;
+    height: auto;
+    display: block; /* Убирает лишние зазоры снизу */
+    background-color: #000000; /* Черный фон пока видео загружается */
+}
+
+/* Адаптивность для мобильных телефонов */
+@media (max-width: 768px) {
+    .video-section {
+        padding: 40px 0 50px 0;
+    }
+    .video-block-title h2 {
+        font-size: 22px;
+    }
+    .video-block-title p {
+        font-size: 12px;
+    }
+}
